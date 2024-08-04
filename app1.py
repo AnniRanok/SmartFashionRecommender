@@ -26,10 +26,9 @@ with open('filenames_resnet.pkl', 'rb') as f:
 # Load ResNet50 model
 base_model = ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
 base_model.trainable = False
-model = tf.keras.Sequential([
-    base_model,
-    GlobalMaxPooling2D()
-])
+# Create new model using the functional API
+x = GlobalMaxPooling2D()(base_model.output)
+model = Model(inputs=base_model.input, outputs=x)
 
 # Load product metadata
 df = pd.read_csv('info.csv')

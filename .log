@@ -908,3 +908,21 @@
 2024-08-04 10:27:16,532 [74922] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
 2024-08-04 10:27:16,533 [74922] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
 2024-08-04 10:27:16,533 [74922] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 14:05:50,556 [74922] DEBUG    tensorflow:34: [JupyterRequire] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2024-08-04 14:05:51,216 [74922] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 7 to 5
+2024-08-04 14:05:51,217 [74922] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 5 to 7
+2024-08-04 14:05:51,217 [74922] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 7 to 5
+2024-08-04 14:05:51,217 [74922] DEBUG    h5py._conv:47: [JupyterRequire] Creating converter from 5 to 7
+2024-08-04 14:06:59,501 [74922] DEBUG    h5py._conv:78: [JupyterRequire] Creating converter from 3 to 5
+2024-08-04 14:28:59,292 [42212] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 14:28:59,295 [42212] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 14:28:59,295 [42212] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 14:28:59,308 [42212] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 14:28:59,312 [42212] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 14:28:59,314 [42212] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2024-08-04 14:29:00,627 [42212] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2024-08-04 14:29:00,628 [42212] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2024-08-04 14:29:00,629 [42212] INFO     root:247: [JupyterRequire] Initializing comms.
+2024-08-04 14:29:00,634 [42212] DEBUG    root:195: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2024-08-04 14:29:00,636 [42212] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2024-08-04 14:29:00,637 [42212] DEBUG    root:97: [JupyterRequire] Registering comm targets.
