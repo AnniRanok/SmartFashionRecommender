@@ -83,5 +83,3 @@ python app1.py
 ### Configure Security Groups:
 Ensure that the security group associated with your EC2 instance allows inbound traffic on port 5000.
 
-### Access the Application:
-Open a web browser and navigate to http://your-ec2-public-dns:5000/.
