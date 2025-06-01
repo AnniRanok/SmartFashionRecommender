@@ -61,26 +61,22 @@ Each image is linked to its metadata to improve user experience in the final app
 
 ## File Structure
 
-SmartFashionRecommender/
+### 📁 File Structure
 
-│
-├── app1.py                     # Main app script
+```plaintext
+SmartFashionRecommender/
+├── app1.py                     # Main application script
 ├── models/
 │   └── yolov8n.pt              # (Optional) object detection model
-│
 ├── featurevector_resnet.pkl    # Feature vectors (ResNet)
 ├── filenames_resnet.pkl        # Corresponding filenames
-│
 ├── templates/
 │   └── index.html              # Basic frontend (Jinja2)
-│
 ├── requirements.txt            # Python dependencies
-├── products_info.csv           # Product metadata
-│
+├── products_info.csv           # Product metadata (brand, price, URL)
 ├── test1.jpg                   # Sample image
 ├── test3.jpg                   # Sample image
 └── README.md                   # Project documentation
-
 
 
 
