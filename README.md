@@ -61,20 +61,7 @@ Each image is linked to its metadata to improve user experience in the final app
 
 ## File Structure
 
-SmartFashionRecommender/
-├── app1.py                     ← Main application script
-├── models/
-│   └── yolov8n.pt              ← (Optional) Object detection model
-├── featurevector_resnet.pkl    ← Precomputed feature vectors (ResNet)
-├── filenames_resnet.pkl        ← Corresponding image filenames
-├── templates/
-│   └── index.html              ← Basic frontend template
-├── requirements.txt            ← Python dependencies
-├── products_info.csv           ← Metadata: brand, name, price, URL
-├── test1.jpg                   ← Sample image query
-├── test3.jpg                   ← Sample image query
-└── README.md                   ← Project documentation
-
+<pre lang="markdown"> ```text SmartFashionRecommender/ ├── app1.py ← Main application script ├── models/ │ └── yolov8n.pt ← (Optional) Object detection model ├── featurevector_resnet.pkl ← Precomputed feature vectors (ResNet) ├── filenames_resnet.pkl ← Corresponding image filenames ├── templates/ │ └── index.html ← Basic frontend template ├── requirements.txt ← Python dependencies ├── products_info.csv ← Metadata: brand, name, price, URL ├── test1.jpg ← Sample image query ├── test3.jpg ← Sample image query └── README.md ← Project documentation ``` </pre>
 
 
 
