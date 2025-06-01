@@ -62,6 +62,7 @@ Each image is linked to its metadata to improve user experience in the final app
 ## File Structure
 
 SmartFashionRecommender/
+
 │
 ├── app1.py                     # Main app script
 ├── models/
@@ -79,6 +80,7 @@ SmartFashionRecommender/
 ├── test1.jpg                   # Sample image
 ├── test3.jpg                   # Sample image
 └── README.md                   # Project documentation
+
 
 
 
