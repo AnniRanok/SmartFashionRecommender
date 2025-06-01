@@ -1,85 +1,76 @@
 # Image Similarity Search Application
 
-### Summary of Sections:
+# Smart Fashion Recommender
 
-- **Overview:** Brief description of what the application does.
-- **Features:** Lists the main features.
-- **Getting Started:** Instructions for setting up and running the application.
-- **Usage:** How to interact with the web interface.
-- **Troubleshooting:** Common issues and solutions.
-- **Deployment on AWS:** Steps for deploying the application on AWS EC2.
-
-## Overview
-
-This application provides a web-based interface for finding similar images using a pre-trained ResNet50 model & MobileNetV3. 
-Users can upload an image, and the application will return the most similar images from the database along with their similarity scores.
-
-## Features
-
-- Upload and analyze images
-- Find and display similar images based on content
-- View image metadata
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.8 or higher
-- Flask
-- TensorFlow
-- OpenCV
-- scikit-learn
-- pandas
-
-### Installation
-
-1. **Set up the environment:**
-
-   Create and activate a virtual environment:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+A visual similarity search system for fashion images.  
+Given a clothing photo, the model finds and displays visually similar items along with brand info, product name, and price — using pre-trained neural networks and cosine similarity.
 
 
-2. **Install the required dependencies:**
-  pip install -r requirements.txt
+##  Summary
 
-3. **Run the application locally:**
-  python core-model-app/app1.py
-  
-    
-## Usage
-
-1. **Upload an image** using the web interface.
-2. **View similar images** and their similarity scores.
-
-## Troubleshooting
-
-- **File not found**: Verify file locations and paths.
-- **ModuleNotFoundError**: Ensure all dependencies are installed.
+- **Goal:** Enable fast and accurate search of similar clothing images based on content.
+- **Input:** User-uploaded image.
+- **Output:** Visually similar items + metadata (brand, name, price, link).
+- **Backend:** Python + ResNet50/MobileNetV3 + Nearest Neighbors.
+- **Frontend:** Jupyter/Web interface (prototype).
 
 
-## Deployment on AWS
+##  Dataset Collection
 
-### Set Up an EC2 Instance:
-Follow AWS documentation to launch an EC2 instance with your preferred operating system.
+Fashion product images were collected using the official **retailed.io API**.  
+The `products_info.csv` file contains:
 
-### Connect to the Instance:
-ssh -i "your-key.pem" ubuntu@your-ec2-public-dns
+-  Brand  
+-  Product name  
+-  Short description  
+-  Price  
+-  Product URL  
 
-### Install Required Packages and Clone the Repository:
+Each image is linked to its metadata to improve user experience in the final app.
 
-- Update package lists: sudo apt-get update
-- Install Python and other necessary packages:
-- Clone the repository
-- Create and activate a virtual environment:
-python3 -m venv venv
-source venv/bin/activate
-- Install the required dependencies:pip install -r requirements.txt
 
-### Run the Application:
-python app1.py
+##  Models Used
 
-### Configure Security Groups:
-Ensure that the security group associated with your EC2 instance allows inbound traffic on port 5000.
+###  ResNet-50
+- Deep CNN with 50 layers, using residual blocks to avoid vanishing gradients.
+- Pre-trained on ImageNet.
+- Offers **high accuracy** and robust feature extraction.
+- Best suited for backend systems with **GPU** access.
+
+###  MobileNetV3
+- Lightweight CNN designed for **mobile and embedded** devices.
+- Fast, efficient, small in size.
+- Also pre-trained on ImageNet.
+- Suitable for integration into **mobile applications**.
+
+
+##  Feature Extraction
+
+- Images are resized and passed through the selected model.
+- The output feature vector (usually 512 or 1024-dim) is stored.
+- Cosine similarity is used to compare new queries against the dataset.
+
+
+##  Image Similarity Search
+
+- User uploads an image.
+- The app extracts features using the selected model.
+- Finds **top N most similar images** via Nearest Neighbors with cosine distance.
+- Returns results along with full product metadata.
+
+
+## File Structure
+SmartFashionRecommender/
+├── app1.py                       # Main app script
+├── models/
+│   ├── yolov8n.pt                # (optional) object detection
+├── featurevector_resnet.pkl      # Precomputed vectors (ResNet)
+├── filenames_resnet.pkl          # Corresponding filenames
+├── templates/
+│   └── index.html                # Basic frontend
+├── requirements.txt
+├── products_info.csv             # Metadata for items
+├── test1.jpg, test3.jpg          # Example queries
+└── README.md
+
 
