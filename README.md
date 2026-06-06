@@ -1,67 +1,67 @@
-# Image Similarity Search Application
+# Smart Fashion Recommender (Image Similarity Search System)
 
-# Smart Fashion Recommender
+## Overview
 
-A visual similarity search system for fashion images.  
-Given a clothing photo, the model finds and displays visually similar items along with brand info, product name, and price — using pre-trained neural networks and cosine similarity.
+This project implements an image-based similarity search system for fashion products.
 
+Given a query image, the system retrieves visually similar items from a product dataset using deep feature embeddings and cosine similarity.
 
-##  Summary
-
-- **Goal:** Enable fast and accurate search of similar clothing images based on content.
-- **Input:** User-uploaded image.
-- **Output:** Visually similar items + metadata (brand, name, price, link).
-- **Backend:** Python + ResNet50/MobileNetV3 + Nearest Neighbors.
-- **Frontend:** Jupyter/Web interface (prototype).
+The goal is to demonstrate a content-based image retrieval (CBIR) pipeline using pre-trained convolutional neural networks.
 
 
-##  Dataset Collection
+## Problem Statement
 
-Fashion product images were collected using the official **retailed.io API**.  
-The `products_info.csv` file contains:
+Traditional keyword-based search is limited for fashion e-commerce.
 
--  Brand  
--  Product name  
--  Short description  
--  Price  
--  Product URL  
+This system explores a visual search approach where similarity is computed directly from image embeddings rather than textual metadata.
 
-Each image is linked to its metadata to improve user experience in the final app.
+## System Pipeline
 
+The application follows a standard image retrieval pipeline:
 
-##  Models Used
-
-###  ResNet-50
-- Deep CNN with 50 layers, using residual blocks to avoid vanishing gradients.
-- Pre-trained on ImageNet.
-- Offers **high accuracy** and robust feature extraction.
-- Best suited for backend systems with **GPU** access.
-
-###  MobileNetV3
-- Lightweight CNN designed for **mobile and embedded** devices.
-- Fast, efficient, small in size.
-- Also pre-trained on ImageNet.
-- Suitable for integration into **mobile applications**.
+1. Input image upload  
+2. Feature extraction using a pre-trained CNN  
+3. Embedding storage for dataset images  
+4. Similarity computation using cosine distance  
+5. Retrieval of top-N nearest items  
+6. Metadata enrichment (brand, price, product info)
 
 
-##  Feature Extraction
+## Models
 
-- Images are resized and passed through the selected model.
-- The output feature vector (usually 512 or 1024-dim) is stored.
-- Cosine similarity is used to compare new queries against the dataset.
+### ResNet-50
+- Deep convolutional neural network with residual connections  
+- Pre-trained on ImageNet  
+- Used for high-quality feature extraction  
 
-
-##  Image Similarity Search
-
-- User uploads an image.
-- The app extracts features using the selected model.
-- Finds **top N most similar images** via Nearest Neighbors with cosine distance.
-- Returns results along with full product metadata.
+### MobileNetV3
+- Lightweight CNN optimized for efficiency  
+- Suitable for fast inference and constrained environments  
+- Used for comparative experimentation  
 
 
-## File Structure
+## Feature Extraction
 
-### 📁 File Structure
+- Images are resized and normalized  
+- Deep feature vectors are extracted from the selected model  
+- Feature embeddings are stored as serialized vectors  
+- Cosine similarity is used to compute nearest neighbors  
+
+
+## Data
+
+The dataset consists of fashion product images linked with metadata:
+
+- Brand  
+- Product name  
+- Description  
+- Price  
+- Product URL  
+
+Metadata is used for result enrichment in the retrieval interface.
+
+
+## System Architecture
 
 ```plaintext
 SmartFashionRecommender/
@@ -80,3 +80,42 @@ SmartFashionRecommender/
 
 
 
+## Output
+
+For a given query image, the system returns:
+
+- Top-N visually similar images  
+- Associated product metadata  
+- Brand and price information  
+- Product reference links  
+
+
+## Limitations
+
+- Not trained end-to-end (uses pre-trained models only)  
+- Dataset size is limited  
+- No real-time model retraining pipeline  
+- Prototype-level web interface  
+
+
+## Tech Stack
+
+- Python  
+- TensorFlow / PyTorch (feature extraction)  
+- ResNet-50 / MobileNetV3  
+- Scikit-learn (Nearest Neighbors)  
+- NumPy / Pandas  
+- Flask / Jinja2 (prototype UI)  
+
+
+## Status
+
+This project is a computer vision prototype for content-based image retrieval in fashion recommendation systems.
+
+
+## Key Focus Areas
+
+- Deep learning feature extraction  
+- Image embedding pipelines  
+- Similarity search systems  
+- Metadata enrichment for retrieval systems  
